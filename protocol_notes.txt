@@ -1,0 +1,148 @@
+RFCs
+        How the Internet works is all written down in RFCs
+        Anyone can read them
+        Anyone can implement them
+        This is a Good Thing
+        This is why Microsoft does not run the Internet
+        This is also why when you write HTML to "whatever works in IE" baby Stallman cries.
+
+        They are handled by the IETF
+        Anyone can publish an RFC
+        And they do
+        The IETF just decides what's a "standard"
+        This is why Microsoft does not own the Internet
+
+
+HTTP
+        HyperText Transfer Protocol
+        for HyperText Markup Language
+        but really it can transport anything
+        and tends to
+        because its so simple
+        and cheap
+
+        Web browser connects to a web server
+        Says "Hi, foo.com.  I'm speaking HTTP version 1.1"
+        I would like the document /foo/bar
+        I can understand these languages...
+        And now I'm done speaking.
+
+        Web server says back
+        Ok, your document is thiiiiis biiiiig.
+        Its this sort of document.
+        Here it is.
+        Or
+        Your document is over here.
+        Try that instead
+        Or
+        You can't have it
+        Or
+        I fucked up
+
+        Then, if the document is HTML, it looks in it for more documents.
+        Like CSS, Javascript and images.
+        And it has the same conversation above for each of them.
+
+        Status codes
+        200 OK
+        3xx Redirect
+        4xx Denied
+        5xx Error
+
+
+HTTP Your Mom Jokes
+
+* 402 Payment Required
+* 411 Length Required (that's what your mom said)
+* 413 Request Entity Too Large (that's what your sister said)
+* 416 Requested Range Not Satisfiable (that's your dad said)
+* 417 Expectation Failed (that's what my mom said)
+* 510 Not Extended (that's what I said)
+
+* 418 I'm a teapot
+
+
+Ports
+        Like mailboxes in an apartment
+        This is how one computer can run multiple services
+        Mail server (port 25, 143, 110)
+        ssh (22)
+        HTTP (80)
+        HTTPS (443)
+        FTP (20 and 21)
+        DNS (53)
+        http://www.google.com means "contact port 80 on www.google.com"
+
+        This is also why you don't need to put "www" on the front of everything
+        and it still works.
+
+        Firewalls often block by port (its easy) without looking at content (hard)
+        So blocking port 25 means you can't send mail.
+        But you don't HAVE to run your mail server on port 25.
+        Its just convention.
+        So you can run a mail server on port 26 and get around most firewalls.
+
+        Some firewalls block all ports but a select few.  Usually HTTP, HTTPS and DNS.
+        Which is why I run an SSH server on one of those ports.  Nobody blocks them.
+        Then you can tunnel everything over SSH.
+        Which is another story.
+
+
+TCP
+        Transmission Control Protocol
+        70s technology
+
+        Your document is torn up into pieces
+        Each of these is a "window" or a "packet"
+        The packet size can be anywhere from 2 bytes to 1 gig
+        This is negociated between the two ends
+
+        Each says who is from and where its going
+        And what port
+        This lets it get passed along by the Internet
+
+        Then they get numbered and sent
+        The receiver acknolwedges what it got
+        If it didn't get it, the sender tries again
+        And again
+        Waiting a little longer each time
+        This lets TCP work over flakey networks
+        It guarantees delivery
+
+
+UDP
+        User Datagram Protocol
+        Much simpler than TCP
+        No reliability
+        There's none of the back and forth of TCP
+        Stuff just gets flung out there
+        And if it doesn't get received, oh well
+
+        Good for streaming
+        Or anything where if data is lost there's no sense resending it
+        Video
+        Voice
+        Music
+        Games
+
+        Also good for things which have to be really small and fast
+        DNS
+        DHCP
+        SNMP
+        RIP
+
+
+IP Address
+IPv4
+IPv6
+DHCP
+DNS
+NAT
+
+                (translator)     (NAT)
+Network line -> Modem ->        Router -> WAP -> Wireless Computers
+                                  ------->       Wired Computers
+
+Mac Address
+
+Routing
